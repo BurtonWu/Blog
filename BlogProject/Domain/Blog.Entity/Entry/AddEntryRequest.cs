@@ -12,6 +12,7 @@ namespace Domain.Blog.Entity.Entry
 		[Key]
 		public Int32 Id { get; set; }
 		[Required]
+		[StringLength(5, ErrorMessage="Too long")]
 		public String Passage { get; set; }
 		public DateTime Date { get; set; }
 	}

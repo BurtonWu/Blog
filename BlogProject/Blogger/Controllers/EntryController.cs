@@ -23,7 +23,9 @@ namespace Blog.Controllers
 			ServiceProvider = new HomeService();
 		}
 
+		
 		[HttpGet]
+		//[Route("~/AddEntry")]
 		public ActionResult AddEntry()
 		{
 			return View(new EntryModel());
@@ -34,6 +36,7 @@ namespace Blog.Controllers
 		{
 			if (false == ModelState.IsValid)
 			{
+				Response.Write("bad");
 				return RedirectToAction("AddEntry");
 			}
 			//find some other method for this instead of assembly usage?

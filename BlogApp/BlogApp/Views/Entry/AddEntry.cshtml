@@ -1,0 +1,14 @@
+﻿
+@model AppBlog.Models.AddEntryViewModel
+
+<h2>AddEntry</h2>
+@using(@Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
+{
+    <div>blog entry</div>
+    @Html.TextAreaFor(x => x.Passage)
+    @Html.ValidationMessageFor(x => x.Passage)
+
+    <button type="submit">Submit</button>
+}
+
+@Html.ActionLink("return to blog", "Home", "Home")

@@ -13,5 +13,6 @@ namespace Domain.Blog.Core.CustomServicesInterface
 		void AddEntry(AddEntryRequest entry);
 		List<String> getSingleEntry(Int32 Id);
 		void EditEntry(EditEntryRequest model);
+		void RemoveEntry(Int32 Id);
 	}
 }

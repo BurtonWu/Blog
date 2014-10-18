@@ -10,6 +10,8 @@ namespace Domain.Blog.Core.Services
 {
 	public class ServiceProviders : IEntryService, IHomeService
 	{
+		#region IHomeService
+
 		#region getEntriesList
 		List<List<String>> IHomeService.getEntriesList()
 		{
@@ -23,6 +25,19 @@ namespace Domain.Blog.Core.Services
 				entries.Add(new List<String>() { Id[i].ToString(), title[i], date[i].ToString(), passage[i] });
 			}
 			return entries;
+		}
+		#endregion
+
+		#endregion
+
+		#region RemoveEntry
+		void IEntryService.RemoveEntry(Int32 Id)
+		{
+			using (DataContext dbContext = new DataContext())
+			{
+				dbContext.Entries.Remove(dbContext.Entries.Single(x => x.Id == Id));
+				dbContext.SaveChanges();
+			}
 		}
 		#endregion
 

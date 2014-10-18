@@ -46,7 +46,7 @@ namespace BlogApp.Controllers
 			ServiceProvider.AddEntry(request);
 			Response.Write("added");
 
-			return View();
+			return RedirectToAction("Home", "Home");
 		}
 
 		#region EditEntry
@@ -63,6 +63,15 @@ namespace BlogApp.Controllers
 			var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
 			ServiceProvider.EditEntry(request);
 			return RedirectToAction("Home", "Home");
+		}
+		#endregion
+
+		#region RemoveEntry
+		[HttpPost]
+		public ActionResult RemoveEntry(Int32 Id)
+		{
+			ServiceProvider.RemoveEntry(Id);
+			return JavaScript("location.reload(true)");
 		}
 		#endregion
 	}

@@ -8,9 +8,13 @@
         <fieldset>
         <div>@entries[1]  @entries[2]</div> 
         <div>@entries[3]</div>
-            @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries[0] }, null)
+        @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries[0] }, null)
+        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new{ Id = entries[0] }, new AjaxOptions { HttpMethod = "Post" }, null)
+        
         </fieldset>
     }
 }
 
-
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+}

@@ -32,5 +32,7 @@ namespace BlogApp.Controllers
 			return View(new DisplayEntryViewModel(ServiceProvider.getEntriesList()));
 		}
 
+
+
 	}
 }

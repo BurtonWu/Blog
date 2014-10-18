@@ -40,3 +40,45 @@ c:\users\burton\documents\visual studio 2012\Projects\BlogApp\BlogApp\bin\System
 c:\users\burton\documents\visual studio 2012\Projects\BlogApp\BlogApp\bin\System.Web.WebPages.Razor.xml
 c:\users\burton\documents\visual studio 2012\Projects\BlogApp\BlogApp\obj\Debug\BlogApp.dll
 c:\users\burton\documents\visual studio 2012\Projects\BlogApp\BlogApp\obj\Debug\BlogApp.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\AutoMapper.Net4.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\BlogApp.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\BlogApp.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Antlr3.Runtime.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\AutoMapper.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Domain.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\EntityFramework.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Newtonsoft.Json.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Net.Http.Formatting.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Helpers.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Http.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Http.WebHost.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Mvc.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Optimization.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Providers.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Razor.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\WebGrease.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Domain.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Antlr3.Runtime.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\AutoMapper.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\EntityFramework.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\Newtonsoft.Json.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Net.Http.Formatting.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Helpers.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Http.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Http.WebHost.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Mvc.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Optimization.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Providers.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.Razor.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\obj\Debug\BlogApp.csprojResolveAssemblyReference.cache
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\obj\Debug\BlogApp.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\BlogApp\obj\Debug\BlogApp.pdb

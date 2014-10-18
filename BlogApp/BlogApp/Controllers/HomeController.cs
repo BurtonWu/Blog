@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Domain.Blog.Core.Services;
-using Domain.Blog.Core.CustomServices;
+using Domain.Blog.Core.CustomServicesInterface;
 using BlogApp.Models;
 
 namespace BlogApp.Controllers
@@ -13,7 +13,7 @@ namespace BlogApp.Controllers
 	{
 
 		#region properties
-		private HomeService ServiceProvider { get; set; }
+		private IHomeService ServiceProvider { get; set; }
 		#endregion
 
 		#region ctor
@@ -21,7 +21,7 @@ namespace BlogApp.Controllers
 		{
 			//Start up database
 			new DataContext().Entries.FirstOrDefault();
-			ServiceProvider = new HomeService();
+			ServiceProvider = new ServiceProviders();
 		}
 		#endregion
 
@@ -29,7 +29,8 @@ namespace BlogApp.Controllers
 		[Route("~/Blog")]
 		public ActionResult Home()
 		{
-			return View(new DisplayEntryViewModel(ServiceProvider.displayEntries()));
+			return View(new DisplayEntryViewModel(ServiceProvider.getEntriesList()));
 		}
+
 	}
 }

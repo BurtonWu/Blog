@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Domain.Blog.Core.Services;
-using Domain.Blog.Core.CustomServices;
+using Domain.Blog.Core.CustomServicesInterface;
 using Domain.Blog.Entity.Entry;
-using AppBlog.Models;
+using BlogApp.Models;
 using AutoMapper;
 
 namespace BlogApp.Controllers
@@ -15,12 +15,12 @@ namespace BlogApp.Controllers
 	{
 
 		#region properties
-		private EntryService ServiceProvider { get; set; }
+		private IEntryService ServiceProvider { get; set; }
 		#endregion
 
 		public EntryController()
 		{
-			ServiceProvider = new EntryService();
+			ServiceProvider = new ServiceProviders();
 		}
 
 
@@ -48,5 +48,22 @@ namespace BlogApp.Controllers
 
 			return View();
 		}
+
+		#region EditEntry
+		[HttpGet]
+		public ActionResult EditEntry(Int32 Id)
+		{
+			return View(new EditEntryViewModel(ServiceProvider.getSingleEntry(Id)));
+		}
+
+		[HttpPost]
+		public ActionResult EditEntry(EditEntryViewModel model)
+		{
+			model.createMap();
+			var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
+			ServiceProvider.EditEntry(request);
+			return RedirectToAction("Home", "Home");
+		}
+		#endregion
 	}
 }

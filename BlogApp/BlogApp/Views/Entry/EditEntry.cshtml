@@ -1,14 +1,14 @@
 ﻿
-@model BlogApp.Models.AddEntryViewModel
-
-<h2>AddEntry</h2>
-@using(@Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
+@model BlogApp.Models.EditEntryViewModel
+<h2>EditEntry</h2>
+@using(@Html.BeginForm("EditEntry", "Entry", FormMethod.Post))
 {
     <h5>blog entry</h5>
     
     <div></div>
     @Html.EditorFor(x => x.Title)
     @Html.TextAreaFor(x => x.Passage)
+    <div>Last Modified: @Model.DateModified</div>
     @Html.ValidationMessageFor(x => x.Passage)
 
     <button type="submit">Submit</button>

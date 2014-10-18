@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Blog.Entity.Entry
 {
-	public class AddEntryRequest
+	public class EditEntryRequest
 	{
 		[Key]
 		public Int32 Id { get; set; }

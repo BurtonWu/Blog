@@ -7,12 +7,11 @@ namespace BlogApp.Models
 {
 	public class DisplayEntryViewModel
 	{
-		public List<String> Passages { get; set; }
-
+		public List<List<String>> Entries { get; set; } 
 		#region ctor
-		public DisplayEntryViewModel(List<String> Passages)
+		public DisplayEntryViewModel(List<List<String>> Entries)
 		{
-			this.Passages = Passages;
+			this.Entries = Entries;
 		}
 		#endregion
 	}

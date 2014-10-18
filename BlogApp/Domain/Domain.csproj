@@ -53,10 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blog.Core\AutoMapper\IMapper.cs" />
-    <Compile Include="Blog.Core\CustomServices\EntryService.cs" />
-    <Compile Include="Blog.Core\CustomServices\HomeService.cs" />
+    <Compile Include="Blog.Core\CustomServicesInterface\IEntryService.cs" />
+    <Compile Include="Blog.Core\CustomServicesInterface\IHomeService.cs" />
     <Compile Include="Blog.Core\Services\DataContext.cs" />
+    <Compile Include="Blog.Core\Services\ServiceProviders.cs" />
     <Compile Include="Blog.Entity\Entry\AddEntryRequest.cs" />
+    <Compile Include="Blog.Entity\Entry\EditEntryRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,3 +10,16 @@ c:\Users\Burton\documents\visual studio 2012\Projects\BlogApp\Domain\obj\Debug\D
 c:\Users\Burton\documents\visual studio 2012\Projects\BlogApp\Domain\bin\Debug\AutoMapper.Net4.dll
 c:\Users\Burton\documents\visual studio 2012\Projects\BlogApp\Domain\bin\Debug\AutoMapper.dll
 c:\Users\Burton\documents\visual studio 2012\Projects\BlogApp\Domain\bin\Debug\AutoMapper.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\AutoMapper.Net4.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\Domain.dll.config
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\Domain.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\Domain.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\AutoMapper.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\AutoMapper.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.dll
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

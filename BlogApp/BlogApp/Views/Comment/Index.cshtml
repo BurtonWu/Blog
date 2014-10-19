@@ -1,24 +1,28 @@
 ﻿
 @model BlogApp.Models.CommentViewModel
 
-    <div><b>@Model.Entry.Title</b> Date: @Model.Entry.Date</div>
-    <div>@Model.Entry.Passage</div>
+    <div><b>Date: </b>@Model.Entry.Date</div>
+    <div><b>Title: </b>@Model.Entry.Title</div>
+    <div><b>Passage: </b>@Model.Entry.Passage</div>
     
-    
+    <h3>COMMENTS</h3>
      <table style="width:500px">
          @foreach(var comment in @Model.ExistingComments)
          {
              <tr>
                  <td>@comment.Comment</td>
-                 <td>@comment.DateOfComment</td>
+                 <td>Date: @comment.DateOfComment</td>
              </tr>
          }
      </table>
+
+<h4>Add Comment?</h4>
     @using (@Html.BeginForm("AddComment", "Comment", FormMethod.Post))
     {
         @Html.TextAreaFor(x => x.Comment)
         @Html.HiddenFor(x => x.EntryId)
-        <button type="submit">Submit</button>
+
+        <p><button type="submit">Submit</button></p>
     }
 
-    @Html.ActionLink("Back To Home", "Index", "Home")
+    <p>@Html.ActionLink("Back To Home", "Index", "Home")</p>

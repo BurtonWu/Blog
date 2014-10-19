@@ -1,16 +1,18 @@
 ﻿
 @model BlogApp.Models.DisplayEntryViewModel
 <h1>This is a blog</h1>
-@Html.ActionLink("Add Entry", "AddEntry","Entry")
+<p>@Html.ActionLink("Add Entry", "AddEntry","Entry")</p>
+
 @{
     foreach(var entries in Model.Entries)
     {
         <fieldset>
-        <div><b>@entries[1]</b>  @entries[2]</div> 
-        <div>@entries[3]</div>
-        @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries[0] }, null)
-        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new { Id = entries[0] }, new AjaxOptions { HttpMethod = "Post" }, null)
-        @Html.ActionLink("comments", "Index", "Comment", new { Id = entries[0] }, null)
+        <div><b>Date: </b>@entries.Date</div>
+        <div><b>Title: </b>@entries.Title</div>
+        <div><b>Passage: </b>@entries.Passage</div>
+        @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries.Id }, null)
+        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new { Id = entries.Id }, new AjaxOptions { HttpMethod = "Post" }, null)
+        @Html.ActionLink("comments", "Index", "Comment", new { Id = entries.Id }, null)
         
         </fieldset>
     }

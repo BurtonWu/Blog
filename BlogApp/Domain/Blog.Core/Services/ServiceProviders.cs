@@ -13,23 +13,12 @@ namespace Domain.Blog.Core.Services
 	{
 		#region IHomeService
 		#region getEntriesList
-		List<List<String>> IHomeService.getEntriesList()
+		List<AddEntryRequest> IHomeService.getEntriesList()
 		{
-			var entries = new List<List<String>>();
-
 			using (DataContext dbcontext = new DataContext())
 			{
-				var Id = dbcontext.Entries.Select(x => x.Id).ToList();
-				var title = dbcontext.Entries.Select(x => x.Title).ToList();
-				var date = dbcontext.Entries.Select(x => x.Date).ToList();
-				var passage = dbcontext.Entries.Select(x => x.Passage).ToList();
-
-				for (int i = 0; i < title.Count; i++)
-				{
-					entries.Add(new List<String>() { Id[i].ToString(), title[i], date[i].ToString(), passage[i] });
-				}
+				return dbcontext.Entries.ToList();
 			}
-			return entries;
 		}
 		#endregion
 		#endregion

@@ -4,14 +4,14 @@
 <h2>AddEntry</h2>
 @using(@Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
 {
-    <h5>blog entry</h5>
-    
-    <div></div>
-    @Html.EditorFor(x => x.Title)
-    @Html.TextAreaFor(x => x.Passage)
+    <div><b>Title</b></div>
+    <p>@Html.EditorFor(x => x.Title)</p>
+    <div><b>Entry</b></div>
+    <p>@Html.TextAreaFor(x => x.Passage)</p>
+        
     @Html.ValidationMessageFor(x => x.Passage)
 
-    <button type="submit">Submit</button>
+    <p><button type="submit">Submit</button></p>
 }
 
-@Html.ActionLink("return to blog", "Index", "Home")
+<p>@Html.ActionLink("return to blog", "Index", "Home")</p>

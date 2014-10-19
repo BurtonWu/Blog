@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Domain.Blog.Entity.Entry;
+using Domain.Blog.Entity.Comment;
 
 namespace Domain.Blog.Core.Services
 {
@@ -16,5 +17,6 @@ namespace Domain.Blog.Core.Services
 
 		}
 		public DbSet<AddEntryRequest> Entries { get; set; }
+		public DbSet<AddCommentRequest> Comments { get; set; }
 	}
 }

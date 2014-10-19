@@ -41,28 +41,28 @@ namespace BlogApp.Controllers
 				return RedirectToAction("AddEntry");
 			}
 			//find some other method for this instead of assembly usage?
-			model.createMap();
+			//model.createMap();
 			var request = Mapper.Map<AddEntryViewModel, AddEntryRequest>(model);
 			ServiceProvider.AddEntry(request);
 			Response.Write("added");
 
-			return RedirectToAction("Home", "Home");
+			return RedirectToAction("Index", "Home");
 		}
 
 		#region EditEntry
 		[HttpGet]
 		public ActionResult EditEntry(Int32 Id)
 		{
-			return View(new EditEntryViewModel(ServiceProvider.getSingleEntry(Id)));
+			return View(new EditEntryViewModel(ServiceProvider.getEntryInformation(Id)));
 		}
 
 		[HttpPost]
 		public ActionResult EditEntry(EditEntryViewModel model)
 		{
-			model.createMap();
+			//model.createMap();
 			var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
 			ServiceProvider.EditEntry(request);
-			return RedirectToAction("Home", "Home");
+			return RedirectToAction("Index", "Home");
 		}
 		#endregion
 

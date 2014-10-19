@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain.Blog.Entity.Entry
+namespace Domain.Blog.Entity.Comment
 {
-	public class AddEntryRequest
+	public class AddCommentRequest
 	{
+	
 		[Key]
 		public Int32 Id { get; set; }
 		[Required]
-		public String Title { get; set; }
+		public Int32 EntryId { get; set; }
 		[Required]
-		public String Passage { get; set; }
-		public DateTime Date { get; set; }
+		public String Comment { get; set; }
+		[Required]
+		public String DateOfComment { get; set; }
 	}
 }

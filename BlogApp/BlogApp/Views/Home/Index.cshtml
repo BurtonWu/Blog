@@ -6,10 +6,11 @@
     foreach(var entries in Model.Entries)
     {
         <fieldset>
-        <div>@entries[1]  @entries[2]</div> 
+        <div><b>@entries[1]</b>  @entries[2]</div> 
         <div>@entries[3]</div>
         @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries[0] }, null)
-        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new{ Id = entries[0] }, new AjaxOptions { HttpMethod = "Post" }, null)
+        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new { Id = entries[0] }, new AjaxOptions { HttpMethod = "Post" }, null)
+        @Html.ActionLink("comments", "Index", "Comment", new { Id = entries[0] }, null)
         
         </fieldset>
     }

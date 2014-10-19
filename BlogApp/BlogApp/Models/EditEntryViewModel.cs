@@ -23,10 +23,10 @@ namespace BlogApp.Models
 			Title = replaceThisEntry[1];
 			Passage = replaceThisEntry[2];
 			DateModified = replaceThisEntry[3];
-
+			createMap();
 		}
 
-		public EditEntryViewModel() { DateModified = "0"; }
+		public EditEntryViewModel() { DateModified = "0"; createMap();  }
 		#endregion
 
 		public void createMap()

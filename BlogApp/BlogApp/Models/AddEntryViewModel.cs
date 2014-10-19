@@ -17,6 +17,10 @@ namespace BlogApp.Models
 		[Required]
 		public String Passage { get; set; }
 
+		public AddEntryViewModel()
+		{
+			createMap();
+		}
 		public void createMap()
 		{
 			Mapper.CreateMap<AddEntryViewModel, AddEntryRequest>()

@@ -5,38 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Blog.Core.CustomServicesInterface;
 using Domain.Blog.Entity.Entry;
+using Domain.Blog.Entity.Comment;
 
 namespace Domain.Blog.Core.Services
 {
-	public class ServiceProviders : IEntryService, IHomeService
+	public class ServiceProviders : IEntryService, IHomeService, ICommentService
 	{
 		#region IHomeService
-
 		#region getEntriesList
 		List<List<String>> IHomeService.getEntriesList()
 		{
 			var entries = new List<List<String>>();
-			var Id = getIdList();
-			var title = getTitlesList();
-			var date = getDatesList();
-			var passage = getPassagesList();
-			for (int i = 0; i < title.Count; i++)
+
+			using (DataContext dbcontext = new DataContext())
 			{
-				entries.Add(new List<String>() { Id[i].ToString(), title[i], date[i].ToString(), passage[i] });
+				var Id = dbcontext.Entries.Select(x => x.Id).ToList();
+				var title = dbcontext.Entries.Select(x => x.Title).ToList();
+				var date = dbcontext.Entries.Select(x => x.Date).ToList();
+				var passage = dbcontext.Entries.Select(x => x.Passage).ToList();
+
+				for (int i = 0; i < title.Count; i++)
+				{
+					entries.Add(new List<String>() { Id[i].ToString(), title[i], date[i].ToString(), passage[i] });
+				}
 			}
 			return entries;
 		}
 		#endregion
-
 		#endregion
 
+		#region IEntryService
 		#region RemoveEntry
 		void IEntryService.RemoveEntry(Int32 Id)
 		{
 			using (DataContext dbContext = new DataContext())
 			{
 				dbContext.Entries.Remove(dbContext.Entries.Single(x => x.Id == Id));
+				dbContext.Comments.RemoveRange(dbContext.Comments.Where(x => x.EntryId == Id));
 				dbContext.SaveChanges();
+				
 			}
 		}
 		#endregion
@@ -66,8 +73,8 @@ namespace Domain.Blog.Core.Services
 		}
 		#endregion
 
-		#region getSingleEntry
-		List<String> IEntryService.getSingleEntry(Int32 Id)
+		#region getEntryInformation
+		List<String> IEntryService.getEntryInformation(Int32 Id)
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
@@ -76,47 +83,40 @@ namespace Domain.Blog.Core.Services
 			}
 		}
 		#endregion
+		#endregion
 
-		#region helperMethods
-		#region getIdList
-		public List<Int32> getIdList()
+		#region ICommentService
+		#region getSingleEntry
+		AddEntryRequest ICommentService.getSingleEntry(Int32 Id)
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
-				return dbcontext.Entries.Select(x => x.Id).ToList();
+				return dbcontext.Entries.Single(x => x.Id == Id);
 			}
 		}
 		#endregion
 
-		#region getPassageList
-		public List<String> getPassagesList()
+		#region getCommentsList
+		List<AddCommentRequest> ICommentService.getCommentsList(Int32 Id)
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
-				return dbcontext.Entries.Select(x => x.Passage).ToList();
+				return dbcontext.Comments.Where(x => x.EntryId == Id).ToList();
 			}
 		}
 		#endregion
 
-		#region getDateList
-		public List<DateTime> getDatesList()
+		#region AddComment
+		void ICommentService.AddComment(AddCommentRequest request)
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
-				return dbcontext.Entries.Select(x => x.Date).ToList();
+				dbcontext.Comments.Add(request);
+				dbcontext.SaveChanges();
 			}
-		#endregion
 		}
+		#endregion
+		#endregion
 
-		#region getTitlesList
-		public List<String> getTitlesList()
-		{
-			using (DataContext dbcontext = new DataContext())
-			{
-				return dbcontext.Entries.Select(x => x.Title).ToList();
-			}
-		}
-		#endregion
-		#endregion
 	}
 }

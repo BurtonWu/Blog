@@ -27,12 +27,12 @@ namespace BlogApp.Controllers
 
 		[HttpGet]
 		[Route("~/Blog")]
-		public ActionResult Home()
+		public ActionResult Index()
 		{
 			return View(new DisplayEntryViewModel(ServiceProvider.getEntriesList()));
 		}
 
-
+		
 
 	}
 }

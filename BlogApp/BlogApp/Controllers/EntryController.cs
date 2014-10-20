@@ -43,7 +43,7 @@ namespace BlogApp.Controllers
 			//find some other method for this instead of assembly usage?
 			//model.createMap();
 			var request = Mapper.Map<AddEntryViewModel, AddEntryRequest>(model);
-			ServiceProvider.AddEntry(request);
+			ServiceProvider.addEntry(request);
 			Response.Write("added");
 
 			return RedirectToAction("Index", "Home");
@@ -53,7 +53,7 @@ namespace BlogApp.Controllers
 		[HttpGet]
 		public ActionResult EditEntry(Int32 Id)
 		{
-			return View(new EditEntryViewModel(ServiceProvider.getEntryInformation(Id)));
+			return View(new EditEntryViewModel(ServiceProvider.getSingleEntry(Id)));
 		}
 
 		[HttpPost]
@@ -61,7 +61,7 @@ namespace BlogApp.Controllers
 		{
 			//model.createMap();
 			var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
-			ServiceProvider.EditEntry(request);
+			ServiceProvider.editEntry(request);
 			return RedirectToAction("Index", "Home");
 		}
 		#endregion
@@ -70,7 +70,7 @@ namespace BlogApp.Controllers
 		[HttpPost]
 		public ActionResult RemoveEntry(Int32 Id)
 		{
-			ServiceProvider.RemoveEntry(Id);
+			ServiceProvider.removeEntry(Id);
 			return JavaScript("location.reload(true)");
 		}
 		#endregion

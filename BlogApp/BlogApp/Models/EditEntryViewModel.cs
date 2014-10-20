@@ -10,19 +10,14 @@ namespace BlogApp.Models
 {
 	public class EditEntryViewModel 
 	{
-		public String Id { get; set; }
-		public String Title { get; set; }
-		public String Passage { get; set; }
+		public AddEntryRequest ReplaceThisEntry { get; set; }
 		[Required]
 		public String DateModified { get; set; }
 
 		#region ctor
-		public EditEntryViewModel(List<String> replaceThisEntry)
+		public EditEntryViewModel(AddEntryRequest ReplaceThisEntry)
 		{
-			Id = replaceThisEntry[0];
-			Title = replaceThisEntry[1];
-			Passage = replaceThisEntry[2];
-			DateModified = replaceThisEntry[3];
+			this.ReplaceThisEntry = ReplaceThisEntry;
 			createMap();
 		}
 
@@ -32,12 +27,10 @@ namespace BlogApp.Models
 		public void createMap()
 		{
 			Mapper.CreateMap<EditEntryViewModel, EditEntryRequest>()
-				.ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-				.ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
-				.ForMember(dest => dest.Passage, opt => opt.MapFrom(src => src.Passage))
+				.ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ReplaceThisEntry.Id))
+				.ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.ReplaceThisEntry.Title))
+				.ForMember(dest => dest.Passage, opt => opt.MapFrom(src => src.ReplaceThisEntry.Date))
 				.ForMember(dest => dest.Date, opt => opt.Ignore()
-				
-				
 			);
 
 		}

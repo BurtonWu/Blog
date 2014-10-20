@@ -34,8 +34,15 @@ namespace BlogApp.Controllers
 		public ActionResult AddComment(CommentViewModel model)
 		{
 			var request = Mapper.Map<CommentViewModel, AddCommentRequest>(model);
-			ServiceProviders.AddComment(request);
+			ServiceProviders.addComment(request);
 			return RedirectToAction("Index", new { Id =  model.EntryId });
+		}
+
+		[HttpPost]
+		public ActionResult removeComment(Int32 Id)
+		{
+			ServiceProviders.removeComment(Id);
+			return JavaScript("location.reload(true)");
 		}
     }
 }

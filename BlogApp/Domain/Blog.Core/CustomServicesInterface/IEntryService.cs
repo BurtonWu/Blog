@@ -10,9 +10,9 @@ namespace Domain.Blog.Core.CustomServicesInterface
 {
 	public interface IEntryService
 	{
-		void AddEntry(AddEntryRequest entry);
-		List<String> getEntryInformation(Int32 Id);
-		void EditEntry(EditEntryRequest model);
-		void RemoveEntry(Int32 Id);
+		void addEntry(AddEntryRequest entry);
+		AddEntryRequest getSingleEntry(Int32 Id);
+		void editEntry(EditEntryRequest model);
+		void removeEntry(Int32 Id);
 	}
 }

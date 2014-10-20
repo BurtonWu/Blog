@@ -12,6 +12,7 @@
              <tr>
                  <td>@comment.Comment</td>
                  <td>Date: @comment.DateOfComment</td>
+                 <td>@Ajax.ActionLink("remove", "RemoveComment", "Comment", new { Id = comment.Id }, new AjaxOptions { HttpMethod = "Post" }, null)</td>
              </tr>
          }
      </table>
@@ -26,3 +27,7 @@
     }
 
     <p>@Html.ActionLink("Back To Home", "Index", "Home")</p>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+}

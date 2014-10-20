@@ -13,6 +13,7 @@ namespace BlogApp.Models
 	public class CommentViewModel
 	{
 		#region Properties
+
 		[Key]
 		public Int32 Id { get; set; }
 
@@ -26,7 +27,6 @@ namespace BlogApp.Models
 
 		public AddEntryRequest Entry { get; set; }
 
-		//Navigation Property
 		public AddCommentRequest[] ExistingComments { get; set; }
 		#endregion
 

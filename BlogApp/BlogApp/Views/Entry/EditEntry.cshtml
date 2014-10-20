@@ -4,11 +4,12 @@
 @using(@Html.BeginForm("EditEntry", "Entry", FormMethod.Post))
 {
     <div><b>Title</b></div>
-    <p>@Html.EditorFor(x => x.Title)</p>
+    <p>@Html.EditorFor(x => x.ReplaceThisEntry.Title)</p>
     <div><b>Entry</b></div>
-    <p>@Html.TextAreaFor(x => x.Passage)</p>
+    @Html.ValidationMessageFor(x => x.ReplaceThisEntry.Passage)
+    <p>@Html.TextAreaFor(x => x.ReplaceThisEntry.Passage)</p>
     <div>Last Modified: @Model.DateModified</div>
-    @Html.ValidationMessageFor(x => x.Passage)
+    
 
     <p><button type="submit">Submit</button></p>
 }

@@ -12,6 +12,7 @@ namespace Domain.Blog.Core.CustomServicesInterface
 	{
 		AddEntryRequest getSingleEntry(Int32 Id);
 		List<AddCommentRequest> getCommentsList(Int32 Id);
-		void AddComment(AddCommentRequest request);
+		void addComment(AddCommentRequest request);
+		void removeComment(Int32 Id);
 	}
 }

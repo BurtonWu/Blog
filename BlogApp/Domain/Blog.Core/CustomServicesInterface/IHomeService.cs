@@ -11,6 +11,5 @@ namespace Domain.Blog.Core.CustomServicesInterface
 	public interface IHomeService
 	{
 		List<AddEntryRequest> getEntriesList();
-		
 	}
 }

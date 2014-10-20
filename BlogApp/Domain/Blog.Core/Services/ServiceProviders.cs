@@ -24,8 +24,8 @@ namespace Domain.Blog.Core.Services
 		#endregion
 
 		#region IEntryService
-		#region RemoveEntry
-		void IEntryService.RemoveEntry(Int32 Id)
+		#region removeEntry
+		void IEntryService.removeEntry(Int32 Id)
 		{
 			using (DataContext dbContext = new DataContext())
 			{
@@ -37,8 +37,8 @@ namespace Domain.Blog.Core.Services
 		}
 		#endregion
 
-		#region AddEntry
-		void IEntryService.AddEntry(AddEntryRequest entry)
+		#region addEntry
+		void IEntryService.addEntry(AddEntryRequest entry)
 		{
 			using (DataContext dbContext = new DataContext())
 			{
@@ -48,8 +48,8 @@ namespace Domain.Blog.Core.Services
 		}
 		#endregion
 
-		#region EditEntry
-		void IEntryService.EditEntry(EditEntryRequest model)
+		#region editEntry
+		void IEntryService.editEntry(EditEntryRequest model)
 		{
 			using (DataContext dbContext = new DataContext())
 			{
@@ -61,30 +61,10 @@ namespace Domain.Blog.Core.Services
 			}
 		}
 		#endregion
+		#endregion
 
-		#region getEntryInformation
-		List<String> IEntryService.getEntryInformation(Int32 Id)
-		{
-			using (DataContext dbcontext = new DataContext())
-			{
-				var entity = dbcontext.Entries.Single(x => x.Id == Id);
-				return new List<String>() { entity.Id.ToString(), entity.Title, entity.Passage, entity.Date.ToString() };
-			}
-		}
-		#endregion
-		#endregion
 
 		#region ICommentService
-		#region getSingleEntry
-		AddEntryRequest ICommentService.getSingleEntry(Int32 Id)
-		{
-			using (DataContext dbcontext = new DataContext())
-			{
-				return dbcontext.Entries.Single(x => x.Id == Id);
-			}
-		}
-		#endregion
-
 		#region getCommentsList
 		List<AddCommentRequest> ICommentService.getCommentsList(Int32 Id)
 		{
@@ -95,8 +75,8 @@ namespace Domain.Blog.Core.Services
 		}
 		#endregion
 
-		#region AddComment
-		void ICommentService.AddComment(AddCommentRequest request)
+		#region addComment
+		void ICommentService.addComment(AddCommentRequest request)
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
@@ -105,7 +85,29 @@ namespace Domain.Blog.Core.Services
 			}
 		}
 		#endregion
+
+		#region removeComment
+		void ICommentService.removeComment(Int32 Id)
+		{
+			using (DataContext dbcontext = new DataContext())
+			{
+				dbcontext.Comments.Remove(dbcontext.Comments.Single(x => x.Id == Id));
+				dbcontext.SaveChanges();
+			}
+		}
+		#endregion
 		#endregion
 
+		#region ICommentService, IEntryService
+		#region getSingleEntry
+		public AddEntryRequest getSingleEntry(Int32 Id)
+		{
+			using (DataContext dbcontext = new DataContext())
+			{
+				return dbcontext.Entries.Single(x => x.Id == Id);
+			}
+		}
+		#endregion
+		#endregion
 	}
 }

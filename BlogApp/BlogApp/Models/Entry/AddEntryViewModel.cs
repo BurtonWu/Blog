@@ -8,7 +8,7 @@ using AutoMapper;
 using Domain.Blog.Core.AutoMapper;
 using Domain.Blog.Entity.Entry;
 
-namespace BlogApp.Models
+namespace BlogApp.Models.Entry
 {
 	public class AddEntryViewModel
 	{

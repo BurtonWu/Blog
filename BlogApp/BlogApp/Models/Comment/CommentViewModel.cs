@@ -8,7 +8,7 @@ using AutoMapper;
 using Domain.Blog.Entity.Comment;
 using Domain.Blog.Entity.Entry;
 
-namespace BlogApp.Models
+namespace BlogApp.Models.Comment
 {
 	public class CommentViewModel
 	{

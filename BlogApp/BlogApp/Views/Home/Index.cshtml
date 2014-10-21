@@ -1,23 +1,11 @@
 ﻿
-@model BlogApp.Models.DisplayEntryViewModel
+@model BlogApp.Models.Home.DisplayEntryViewModel
+@using Domain.Blog.Core.Extensions;
+
 <h1>This is a blog</h1>
 <p>@Html.ActionLink("Add Entry", "AddEntry","Entry")</p>
 
-@{
-    foreach(var entries in Model.Entries)
-    {
-        <fieldset>
-        <div><b>Date: </b>@entries.Date</div>
-        <div><b>Title: </b>@entries.Title</div>
-        <div><b>Passage: </b>@entries.Passage</div>
-        @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries.Id }, null)
-        @Ajax.ActionLink("remove", "RemoveEntry", "Entry", new { Id = entries.Id }, new AjaxOptions { HttpMethod = "Post" }, null)
-        @Html.ActionLink("comments", "Index", "Comment", new { Id = entries.Id }, null)
-        
-        </fieldset>
-    }
-}
+@Html.PageLoader(Model.SortedEntities)
 
-@section scripts{
-    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
-}
+@Html.ActionLink("next", "Index", new { pageNumber = Model.PageNumber + 1 })
+@Html.ActionLink("previous", "Index", new { pageNumber = Model.PageNumber - 1 })

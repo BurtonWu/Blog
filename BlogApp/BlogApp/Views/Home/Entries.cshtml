@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Domain.Blog.Entity.Entry.AddEntryRequest>
+@{
+    foreach(var entries in Model)
+    {
+       <section>
+        <b>Date: </b>@entries.Date      
+        <header><b>Title: </b>@entries.Title</header>
+        <b>Passage: </b>@entries.Passage
+        </section>    
+     
+        <section>
+        @Html.ActionLink("edit", "EditEntry", "Entry", new { Id = entries.Id }, null)
+        @Html.ActionLink("remove", "RemoveEntry", "Entry", new { Id = entries.Id }, null)
+        @Html.ActionLink("comments", "Index", "Comment", new { Id = entries.Id }, null)
+        </section>
+    <hr />
+    }
+}

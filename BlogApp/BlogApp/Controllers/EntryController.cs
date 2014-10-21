@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Domain.Blog.Core.Services;
 using Domain.Blog.Core.CustomServicesInterface;
 using Domain.Blog.Entity.Entry;
-using BlogApp.Models;
+using BlogApp.Models.Entry;
 using AutoMapper;
 
 namespace BlogApp.Controllers
@@ -37,7 +37,6 @@ namespace BlogApp.Controllers
 		{
 			if (false == ModelState.IsValid)
 			{
-				Response.Write("bad");
 				return RedirectToAction("AddEntry");
 			}
 			//find some other method for this instead of assembly usage?
@@ -66,12 +65,13 @@ namespace BlogApp.Controllers
 		}
 		#endregion
 
-		#region RemoveEntry
-		[HttpPost]
+		#region removeEntry
+
+		[HttpGet]
 		public ActionResult RemoveEntry(Int32 Id)
 		{
 			ServiceProvider.removeEntry(Id);
-			return JavaScript("location.reload(true)");
+			return RedirectToAction("Index", "Home");
 		}
 		#endregion
 	}

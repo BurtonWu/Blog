@@ -145,10 +145,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CommentViewModel.cs" />
-    <Compile Include="Models\DisplayEntryViewModel.cs" />
-    <Compile Include="Models\AddEntryViewModel.cs" />
-    <Compile Include="Models\EditEntryViewModel.cs" />
+    <Compile Include="Models\Comment\CommentViewModel.cs" />
+    <Compile Include="Models\Home\DisplayEntryViewModel.cs" />
+    <Compile Include="Models\Entry\AddEntryViewModel.cs" />
+    <Compile Include="Models\Entry\EditEntryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +219,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Entry\EditEntry.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Home\Entries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -248,7 +249,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>10776</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:36586/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

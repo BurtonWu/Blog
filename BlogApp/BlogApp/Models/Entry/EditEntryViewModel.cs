@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Domain.Blog.Entity.Entry;
 
-namespace BlogApp.Models
+namespace BlogApp.Models.Entry
 {
 	public class EditEntryViewModel 
 	{
@@ -29,7 +29,7 @@ namespace BlogApp.Models
 			Mapper.CreateMap<EditEntryViewModel, EditEntryRequest>()
 				.ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ReplaceThisEntry.Id))
 				.ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.ReplaceThisEntry.Title))
-				.ForMember(dest => dest.Passage, opt => opt.MapFrom(src => src.ReplaceThisEntry.Date))
+				.ForMember(dest => dest.Passage, opt => opt.MapFrom(src => src.ReplaceThisEntry.Passage))
 				.ForMember(dest => dest.Date, opt => opt.Ignore()
 			);
 

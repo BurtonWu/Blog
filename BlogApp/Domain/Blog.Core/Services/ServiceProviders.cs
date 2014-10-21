@@ -17,7 +17,7 @@ namespace Domain.Blog.Core.Services
 		{
 			using (DataContext dbcontext = new DataContext())
 			{
-				return dbcontext.Entries.ToList();
+				return dbcontext.Entries.OrderBy(x => x.Id).ToList();
 			}
 		}
 		#endregion

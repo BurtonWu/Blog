@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Domain.Blog.Core.Services;
 using Domain.Blog.Core.CustomServicesInterface;
-using BlogApp.Models;
+using BlogApp.Models.Comment;
 using AutoMapper;
 using Domain.Blog.Entity.Comment;
 using Domain.Blog.Entity.Entry;
@@ -39,7 +39,7 @@ namespace BlogApp.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult removeComment(Int32 Id)
+		public ActionResult RemoveComment(Int32 Id)
 		{
 			ServiceProviders.removeComment(Id);
 			return JavaScript("location.reload(true)");

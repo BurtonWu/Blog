@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Domain.Blog.Core.Services;
 using Domain.Blog.Core.CustomServicesInterface;
-using BlogApp.Models;
+using BlogApp.Models.Home;
+using Domain.Blog.Entity.Entry;
 
 namespace BlogApp.Controllers
 {
@@ -27,12 +28,9 @@ namespace BlogApp.Controllers
 
 		[HttpGet]
 		[Route("~/Blog")]
-		public ActionResult Index()
+		public ActionResult Index(Int32 pageNumber = 1)
 		{
-			return View(new DisplayEntryViewModel(ServiceProvider.getEntriesList()));
+			return View(new DisplayEntryViewModel(ServiceProvider.getEntriesList(), pageNumber, 5));
 		}
-
-		
-
 	}
 }

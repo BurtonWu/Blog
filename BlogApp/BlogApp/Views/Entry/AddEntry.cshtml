@@ -1,17 +1,17 @@
 ﻿
-@model BlogApp.Models.AddEntryViewModel
+@model BlogApp.Models.Entry.AddEntryViewModel
 
-<h2>AddEntry</h2>
+<fieldset>
+<Legend>AddEntry</Legend>
 @using(@Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
 {
     <div><b>Title</b></div>
-    <p>@Html.EditorFor(x => x.Title)</p>
+    @Html.EditorFor(x => x.Title)
     <div><b>Entry</b></div>
-    <p>@Html.TextAreaFor(x => x.Passage)</p>
-        
+    @Html.TextAreaFor(x => x.Passage)
     @Html.ValidationMessageFor(x => x.Passage)
 
     <p><button type="submit">Submit</button></p>
 }
-
+</fieldset>
 <p>@Html.ActionLink("return to blog", "Index", "Home")</p>

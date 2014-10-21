@@ -20,9 +20,9 @@ namespace BlogApp.Models.Comment
 		public Int32 EntryId { get; set; }
 
 		[Required]
+		[StringLength(50, MinimumLength = 1, ErrorMessage = "Comment must be between 1 and 50 characters")]
 		public String Comment { get; set; }
 
-		[Required]
 		public String DateOfComment { get; set; }
 
 		public AddEntryRequest Entry { get; set; }

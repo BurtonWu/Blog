@@ -7,5 +7,8 @@
 
 @Html.PageLoader(Model.SortedEntities)
 
-@Html.ActionLink("next", "Index", new { pageNumber = Model.PageNumber + 1 })
+<fieldset>
 @Html.ActionLink("previous", "Index", new { pageNumber = Model.PageNumber - 1 })
+    <legend>@Model.PageNumber</legend>
+@Html.ActionLink("next", "Index", new { pageNumber = Model.PageNumber + 1 })
+</fieldset>

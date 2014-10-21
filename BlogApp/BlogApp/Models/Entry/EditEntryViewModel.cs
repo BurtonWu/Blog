@@ -11,6 +11,7 @@ namespace BlogApp.Models.Entry
 	public class EditEntryViewModel 
 	{
 		public AddEntryRequest ReplaceThisEntry { get; set; }
+
 		[Required]
 		public String DateModified { get; set; }
 

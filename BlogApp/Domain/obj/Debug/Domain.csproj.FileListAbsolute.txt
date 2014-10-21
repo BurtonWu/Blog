@@ -35,3 +35,4 @@ C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\System.Web.WebPages.
 C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.dll
 C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.pdb
+C:\Users\Burton\Desktop\repos\Blog\BlogApp\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

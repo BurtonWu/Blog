@@ -18,16 +18,22 @@
      </table>
 
 <h4>Add Comment?</h4>
-    @using (@Html.BeginForm("AddComment", "Comment", FormMethod.Post))
-    {
-        @Html.TextAreaFor(x => x.Comment)
-        @Html.HiddenFor(x => x.EntryId)
+@using (Html.BeginForm("AddComment", "Comment", FormMethod.Post))
+{
+   
+    @Html.ValidationSummary(true)
 
-        <p><button type="submit">Submit</button></p>
-    }
+    <div>@Html.ValidationMessageFor(x => x.Comment)</div>
+    @Html.TextAreaFor(x => x.Comment)
 
+    @Html.HiddenFor(x => x.EntryId)
+
+    <p><button type="submit">Submit</button></p>
+    
+}
     <p>@Html.ActionLink("Back To Home", "Index", "Home")</p>
 
 @section scripts{
     @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/bundles/jqueryval")
 }

@@ -20,7 +20,9 @@ namespace Domain.Blog.Core.Pager
 			this.SortedEntities = new List<TEntity>();
 			this.TotalPages = (Int32)Math.Ceiling(entities.Count() / (Double)this.PageSize);
 
-			if (pageNumber > this.TotalPages) this.PageNumber = this.TotalPages; else this.PageNumber = pageNumber;
+			if (pageNumber > this.TotalPages) this.PageNumber = this.TotalPages;
+			else if (pageNumber < 1) this.PageNumber = 1;
+			else this.PageNumber = pageNumber;
 
 			this.SortedEntities = (entities.Skip((this.PageNumber -1) * this.PageSize).Take(this.PageSize).ToList());
 		}

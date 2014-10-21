@@ -3,15 +3,23 @@
 
 <fieldset>
 <Legend>AddEntry</Legend>
-@using(@Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
+
+@using(Html.BeginForm("AddEntry", "Entry", FormMethod.Post))
 {
     <div><b>Title</b></div>
+    <div>@Html.ValidationMessageFor(x => x.Title)</div>
     @Html.EditorFor(x => x.Title)
-    <div><b>Entry</b></div>
+    
+    <div><b>Passage</b></div>
+    <div>@Html.ValidationMessageFor(x => x.Passage)</div>
     @Html.TextAreaFor(x => x.Passage)
-    @Html.ValidationMessageFor(x => x.Passage)
 
     <p><button type="submit">Submit</button></p>
 }
+
 </fieldset>
 <p>@Html.ActionLink("return to blog", "Index", "Home")</p>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -33,9 +33,12 @@ namespace BlogApp.Controllers
 		[HttpPost]
 		public ActionResult AddComment(CommentViewModel model)
 		{
-			var request = Mapper.Map<CommentViewModel, AddCommentRequest>(model);
-			ServiceProviders.addComment(request);
-			return RedirectToAction("Index", new { Id =  model.EntryId });
+			if (true == ModelState.IsValid)
+			{
+				var request = Mapper.Map<CommentViewModel, AddCommentRequest>(model);
+				ServiceProviders.addComment(request);
+			}
+			return RedirectToAction("Index", new { Id = model.EntryId });
 		}
 
 		[HttpPost]

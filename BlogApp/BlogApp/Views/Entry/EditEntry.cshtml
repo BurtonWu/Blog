@@ -2,19 +2,26 @@
 @model BlogApp.Models.Entry.EditEntryViewModel
 <fieldset>
 <legend>EditEntry</legend>
-@using(@Html.BeginForm("EditEntry", "Entry", FormMethod.Post))
+@using(Html.BeginForm("EditEntry", "Entry", FormMethod.Post))
 {
-    @Html.HiddenFor(x => x.ReplaceThisEntry.Id)
+    @Html.ValidationSummary(true)
 
     <div><b>Title</b></div>
+    <div>@Html.ValidationMessageFor(x => x.ReplaceThisEntry.Title)</div>
     <p>@Html.EditorFor(x => x.ReplaceThisEntry.Title)</p>
     
-    <div><b>Entry</b></div>
+    <div><b>Passage</b></div>
+    <div>@Html.ValidationMessageFor(x => x.ReplaceThisEntry.Passage)</div>
     <p>@Html.TextAreaFor(x => x.ReplaceThisEntry.Passage)</p>
     
+    @Html.HiddenFor(x => x.ReplaceThisEntry.Id)
     <div>Last Modified: @Model.ReplaceThisEntry.Date</div>
     
     <p><button type="submit">Submit</button></p>
 }
 </fieldset>
 <p>@Html.ActionLink("return to blog", "Index", "Home")</p>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

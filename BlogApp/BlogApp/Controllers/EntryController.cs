@@ -35,17 +35,14 @@ namespace BlogApp.Controllers
 		[Route("~/AddEntry")]
 		public ActionResult AddEntry(AddEntryViewModel model)
 		{
-			if (false == ModelState.IsValid)
+			if (true == ModelState.IsValid)
 			{
-				return RedirectToAction("AddEntry");
+				var request = Mapper.Map<AddEntryViewModel, AddEntryRequest>(model);
+				ServiceProvider.addEntry(request);
+				Response.Write("added");
+				return RedirectToAction("Index", "Home");
 			}
-			//find some other method for this instead of assembly usage?
-			//model.createMap();
-			var request = Mapper.Map<AddEntryViewModel, AddEntryRequest>(model);
-			ServiceProvider.addEntry(request);
-			Response.Write("added");
-
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("AddEntry");
 		}
 
 		#region EditEntry
@@ -58,10 +55,13 @@ namespace BlogApp.Controllers
 		[HttpPost]
 		public ActionResult EditEntry(EditEntryViewModel model)
 		{
-			//model.createMap();
-			var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
-			ServiceProvider.editEntry(request);
-			return RedirectToAction("Index", "Home");
+			if (true == ModelState.IsValid)
+			{
+				var request = Mapper.Map<EditEntryViewModel, EditEntryRequest>(model);
+				ServiceProvider.editEntry(request);
+				return RedirectToAction("Index", "Home");
+			}
+			return RedirectToAction("EditEntry", new { Id = model.ReplaceThisEntry.Id });
 		}
 		#endregion
 

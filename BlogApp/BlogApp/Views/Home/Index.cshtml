@@ -12,3 +12,16 @@
     <legend>@Model.PageNumber</legend>
 @Html.ActionLink("next", "Index", new { pageNumber = Model.PageNumber + 1 })
 </fieldset>
+
+<div data-ng-app="testApp">
+    <div data-ng-controller="testCtor">
+        <input type="text" data-ng-model="message" />
+        <div>{{message | reverse}}</div>
+        <div>{{data.message}}</div>
+        <div>{{data.func2()}}</div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Assets/angulartest.js")
+}
